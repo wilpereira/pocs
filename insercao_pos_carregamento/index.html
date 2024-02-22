@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Inserção pós carregamento</title>
+</head>
+
+<body class="body">
+    <div class="wrapper">
+        <button onclick="btn()">Calcular</button>
+
+        <div class="tooltip">
+            <i>i</i>
+            <span class="fadeOut">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+        </div>
+    </div>
+</body>
+
+<script>
+    const disclamer = `
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>    
+    `
+    const tooltip = `<span>Tooltip</span>`
+    const button = document.querySelector('button')
+    const infoSelector = document.querySelector("body > div > p")
+    const wrapper = document.querySelector('.wrapper');
+    
+    function btn() {
+        setTimeout(() => {
+            button.insertAdjacentHTML('afterend', disclamer)
+        }, 500);
+    }  
+    
+    button.addEventListener('click', () => {
+        console.log('Listener')
+        function handleMutation(mutationsList, observer) {
+                for (const mutation of mutationsList) {
+                    if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                        // O disclamer foi adicionado ao DOM, agora podemos inserir o tooltip
+                        wrapper.insertAdjacentHTML('beforeend', tooltip);
+                        // Desconectar o observador após a inserção do tooltip, se necessário
+                        observer.disconnect();
+                    }
+                }
+            }
+    
+            const observer = new MutationObserver(handleMutation);
+    
+            observer.observe(wrapper, { subtree: true, attributes: false, childList: true });
+    })
+
+    function alignTooltip(pai, tooltip) {
+        const paiRect = pai.getBoundingClientRect()
+        const tooltipRect = tooltip.getBoundingClientRect()
+
+        const topPos = paiRect.offsetTop + (paiRect.offsetHeight - tooltipRect.offsetHeight) / 2;
+        const leftPos = paiRect.offsetLeft + paiRect.offsetWidth  + 10
+
+        tooltip.style.top = `${topPos}px`;
+        tooltip.style.left = `${leftPos}px`;
+
+    }
+
+    const pai = document.querySelector("body > div > div")
+    const tool = document.querySelector("body > div > div > span")
+
+    alignTooltip(pai, tool);
+    window.addEventListener('resize', function() {    
+        alignTooltip(pai, tool);
+    });
+
+</script>
+</html>

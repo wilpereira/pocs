@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul {
+            background: #fafafa;
+            border: 1px solid #ccc;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 20px;
+            justify-items: center;
+            padding: 1rem;
+        }
+        ul li {
+            background: #333;
+            border: #333;
+            color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            height: 150px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <p>Produto 1</p>
+        </li>
+        <li>
+            <p>Produto 2</p>
+        </li>
+        <li>
+            <p>Produto 3</p>
+        </li>
+        <li>
+            <p>Produto 4</p>
+        </li>
+        <li>
+            <p>Produto 5</p>
+        </li>
+        <li>
+            <p>Produto 6</p>
+        </li>
+        <li>
+            <p>Produto 7</p>
+        </li>
+        <li>
+            <p>Produto 8</p>
+        </li>
+        <li>
+            <p>Produto 9</p>
+        </li>
+        <li>
+            <p>Produto 10</p>
+        </li>
+        <li>
+            <p>Produto 11</p>
+        </li>
+        <li>
+            <p>Produto 12</p>
+        </li>
+        <li>
+            <p>Produto 13</p>
+        </li>
+        <li>
+            <p>Produto 14</p>
+        </li>
+        <li>
+            <p>Produto 15</p>
+        </li>
+        <li>
+            <p>Produto 16</p>
+        </li>
+        <li>
+            <p>Produto 17</p>
+        </li>
+        <li>
+            <p>Produto 18</p>
+        </li>
+        <li>
+            <p>Produto 19</p>
+        </li>
+        <li>
+            <p>Produto 20</p>
+        </li>
+    </ul>
+
+    <script>
+        const stringText = ['Produto 16', 'Produto 20']
+        const texts = document.querySelectorAll('ul li')
+
+        texts.forEach(text => {
+            const tag = text.querySelector('p')
+            
+            if(stringText.includes(tag.textContent.trim())) {
+                text.style.backgroundColor = '#ff0000'
+            }
+        })
+    </script>
+</body>
+</html>

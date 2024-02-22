@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper"></div>
+    <script>
+        const contentData = {
+            steps: [
+                {
+                    step: '1º passo',
+                    icon: 'https://cms.santander.com.br/sites/WPS/imagem/img-cro-acr61p-1unique/24-01-17_141937_P_ic_passo1.svg',
+                    svg: '<svg height="4" class="step-bar first-bar"><path fill="none" fill-rule="evenodd" stroke="#CEDEE7" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M2 2h464"/></svg>',
+                    title: 'Identificação',
+                    desc: 'Digite seu CPF e suas informações pessoais',
+                },
+                {
+                    step: '2º passo',
+                    icon: 'https://cms.santander.com.br/sites/WPS/imagem/img-cro-acr61p-2unique/24-01-17_142330_P_ic_passo2.svg',
+                    svg: '<svg height="4" class="step-bar"><path fill="none" fill-rule="evenodd" stroke="#CEDEE7" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M2 2h464"/></svg>',
+                    title: 'Opção Cartão de Crédito Unique',
+                    desc: 'Verifique a opção de renegociação que disponibiliza a solicitação do Cartão de Crédito Unique'
+                },
+                {
+                    step: '3º passo',
+                    icon: 'https://cms.santander.com.br/sites/WPS/imagem/img-cro-acr61p-3unique/24-01-17_142545_P_ic_passo3.svg',
+                    svg: '<svg height="4" class="step-bar last-bar"><path fill="none" fill-rule="evenodd" stroke="#CEDEE7" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M2 2h464"/></svg>',
+                    title: 'Solicitação',
+                    desc: 'Na tela do comprovante da sua renegociação, clique no link para ser direcionado à pagina de solicitação do seu cartão de crédito'
+                }
+            ]
+        }
+
+        function stepHtml(steps) {
+            return steps.map(step => `
+                <div class="card-space">
+                    <div class="transparent-card">
+                        <img src="${step.icon}">
+                        ${step.svg}
+                        <div class="step">
+                        <small>${step.step}</small>
+                        <h2>${step.title}</h2>
+                        <small>${step.desc}</small>
+                        </div>
+                    </div>
+                </div>
+            `);
+        }
+
+        function insertHtml() {
+            return `
+                <div class="card-area" data-slide="carrosel-steps">
+                    ${stepHtml(contentData.steps)}
+                </div>
+            `;
+        }
+
+        document.querySelector('div.wrapper').innerHTML = insertHtml()
+    </script>
+</body>
+
+</html>
