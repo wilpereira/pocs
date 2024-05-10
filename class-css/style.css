@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+.wrapper {
+    border: 1px solid #ccc;
+
+    & .container {
+        background: #ccc;
+        padding: 1rem;
+
+        & .content {
+            background: #222;
+            margin: 1rem;
+            padding: 1rem;
+
+            .__title {
+                color: #fff;
+            }
+        }
+    }   
+
+
+    hr {
+        margin: 2rem 0;
+    }
+
+    input {
+        border: 1px blue dotted
+    }
+    
+    label {
+        & input {
+            border: 1px red solid
+        }
+    }
+}

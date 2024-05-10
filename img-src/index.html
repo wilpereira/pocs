@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alterar SRC de uma imagem via DOM</title>
+</head>
+<body>
+    <!-- Imagem inicial -->
+    <img id="myImage" width="300" height="300" src="https://media.istockphoto.com/id/1317323736/pt/foto/a-view-up-into-the-trees-direction-sky.jpg?s=2048x2048&w=is&k=20&c=pq8i28boePuwhpFvQzQxgNhAYeW5CFhzLuDuBJ-76XI=" alt="Imagem Original">
+    <br>
+    <!-- Botão para alterar a imagem -->
+    <button id="changeImageButton">Alterar Imagem</button>
+
+    <script>
+        // Array com os caminhos das imagens
+        var imagens = ["https://media.istockphoto.com/id/1317323736/pt/foto/a-view-up-into-the-trees-direction-sky.jpg?s=2048x2048&w=is&k=20&c=pq8i28boePuwhpFvQzQxgNhAYeW5CFhzLuDuBJ-76XI=", "https://media.istockphoto.com/id/1353007397/pt/foto/aerial-view-of-blue-lakes-and-and-hills-with-green-forests-in-croatia.jpg?s=2048x2048&w=is&k=20&c=Hso7V9lK8FzAltlKoA8NgZsc_fPt0puGAeCrTaIZITY="];
+        var index = 0; // Índice da imagem atual
+
+        // Adiciona um ouvinte de evento de clique ao botão
+        document.getElementById('changeImageButton').addEventListener('click', function() {
+            // Seleciona a imagem pelo ID
+            var imagem = document.getElementById('myImage');
+            
+            // Atualiza o src da imagem
+            imagem.src = imagens[index];
+            
+            // Atualiza o índice para a próxima imagem no próximo clique
+            index = (index + 1) % imagens.length;
+        });
+    </script>
+<hr>
+    <img src="Screenshot_1.png" alt="">
+</body>
+</html>

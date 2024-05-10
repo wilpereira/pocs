@@ -1,0 +1,135 @@
+.main {
+    background:#ccc;
+    margin: 0 auto;
+    width: 550px;
+    height: 800px;
+}
+
+main {
+    background: #FFF;
+    border-radius: 4px;
+    max-width: 343px;
+    left: 50%;
+    padding: 2rem 2rem 0;
+    position: fixed;
+    top: 15%;
+    transform: translateX(-50%);
+    z-index: 999;
+}
+
+header button {
+    background: none;
+    border: 1px solid #ccc;
+    height: .875rem;
+    padding: .5rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: .875rem;
+}
+
+header h2 {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 700;   
+    line-height: 1.25;
+    text-align: center;
+}
+
+section h3 {
+    color: #444444;
+    font-family: 'SantanderHeadline';
+    font-size: .875rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+section ul {
+    padding: 0;
+    list-style: none;
+}
+
+section ul li {
+    color: #444444;
+    display: flex;
+    gap: .5rem
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+footer img {
+    margin-bottom: -1rem;
+}
+
+#background-seg24 {
+    background: #0f0f0fba;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+/* #modal-seg24 {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: #FFFFFF;
+    border-radius: 6px;
+    max-width: 320px;
+    z-index: 99;
+} */
+
+/* #modal-seg24 div:nth-child(1) {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#modal-seg24 #click-quit {
+    transform: rotate(45deg);
+    color: #000000;
+    font-size: 2rem;
+    line-height: 3rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    text-align-last: center;
+    cursor: pointer;
+    font-weight: 300;
+} */
+
+/* #modal-seg24 div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: SantanderHeadline, sans-serif;
+    padding: 0 10% 2rem;
+    text-align: center;
+    margin-top: -0.7rem;
+} */
+
+/* #modal-seg24 h2 {
+    font-weight: 600;
+    white-space: pre;
+    margin: 0.7rem;
+} */
+
+/* #modal-seg24 img {
+    min-height: 3rem;
+    margin: 1rem 0;
+    width: calc(100% + 1rem);
+} */
+
+/* #modal-seg24 #pre-disclaimer {
+    margin: 1rem 0;
+    width: 116%;
+}
+
+#modal-seg24 #disclaimer {
+    width: 120%;
+} */

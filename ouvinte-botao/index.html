@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0 auto;
+            width: 80%;
+            height: 550px;
+        }
+
+        button {
+            height: 30px;
+            width: 200px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background: red;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .new-bt {
+            margin: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="bt-default">Um botão</button>
+    </div>
+    <script>
+        function buttonEvent() {
+            const button = document.querySelector('.bt-default')
+
+            button.onclick = () => {
+                button.style.background = '#000'
+            }
+        }
+
+        const ELEMENT_HTML = `
+            <button class="new-bt">Novo Botão</button>
+        `
+
+        function injectElementHtml() {
+            const elementContainer = document.querySelector('.container')
+            elementContainer.insertAdjacentHTML('beforeend', ELEMENT_HTML)
+        }
+
+        function handleBtDefault() {
+            console.log('Esse é o evento botão default')
+        }
+
+        function listenerButtonDefault() {
+            document.querySelector('.bt-default').addEventListener('click', handleBtDefault())
+        }
+
+        function eventNewButton() {
+            const newButton = document.querySelector('.new-bt')
+            newButton.addEventListener('click', () => {
+                const button = document.querySelector('.bt-default')
+
+                console.log('cliquei')
+                button.click()
+            })
+        }
+
+        buttonEvent()
+        injectElementHtml()
+        listenerButtonDefault()
+        eventNewButton()
+    </script>
+
+    <!-- <script>
+        document.getElementById('botaoA').addEventListener('click', function () {
+            document.body.style.backgroundColor = "black";
+        });
+
+        const novoBotao = document.createElement("button");
+        novoBotao.textContent = "Novo Botão";
+
+        novoBotao.addEventListener("click", function () {
+            document.getElementById('botaoA').click();
+        });
+
+        document.body.appendChild(novoBotao);
+
+    </script> -->
+</body>
+
+</html>
