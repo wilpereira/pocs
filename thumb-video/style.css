@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #DEEDF2;
+    padding: 3rem;
+}
+
+.wrapper-winner {
+    height: 536px;
+    width: 1143px;
+    margin: auto;
+
+    .box-winner {
+        background: #fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .watch {
+            padding: 1.5rem;
+            
+            .watch__player {
+                border: 1px solid #ccc;
+                height: 308px;
+                width: 548px;
+
+                video {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            .watch__columns {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 1rem 0;
+            }
+        }
+
+        .list-thumbs {
+            border-left: 1px solid #CCC;           
+            
+            li {
+                align-items: center;
+                border-top: 1px solid #CCC; 
+                display: flex; 
+                flex-direction: row;
+                gap: 1.5rem;
+                padding: 1.5rem;     
+
+                &:first-child {
+                    border-top: none
+                }
+
+                img {
+                    border: 1px solid #ccc;
+                    height: 85px;
+                    width: 150px;
+                }
+
+                .list-thumbs__content {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 1.5rem;
+                    
+                    span {
+                        align-items: center;
+                        display: flex;
+                    }   
+                    
+                    .list-thumbs__content--inner {
+                        small {
+                            display: block;
+                        } 
+
+                        a {
+                            color: #CC0000;
+                            display: block;
+                            text-align: right;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
