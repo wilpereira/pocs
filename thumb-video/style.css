@@ -8,84 +8,128 @@ body {
     padding: 3rem;
 }
 
-.wrapper-winner {
+.CAP13 {
     height: 536px;
     width: 1143px;
     margin: auto;
+}
 
-    .box-winner {
-        background: #fff;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+.CAP13__columns {
+    max-width: 50%;
+}
 
-        .watch {
-            padding: 1.5rem;
-            
-            .watch__player {
-                border: 1px solid #ccc;
-                height: 308px;
-                width: 548px;
+.CAP13__winners {
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
-                video {
-                    height: 100%;
-                    width: 100%;
-                }
-            }
+.CAP13__storie {
+    padding: 1.5rem;
+}
 
-            .watch__columns {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                padding: 1rem 0;
-            }
-        }
+.CAP13__storie__watch {
+    position: relative;
+}
 
-        .list-thumbs {
-            border-left: 1px solid #CCC;           
-            
-            li {
-                align-items: center;
-                border-top: 1px solid #CCC; 
-                display: flex; 
-                flex-direction: row;
-                gap: 1.5rem;
-                padding: 1.5rem;     
+.CAP13__watch--player video {
+    height: 100%;
+    width: 100%;
+}
 
-                &:first-child {
-                    border-top: none
-                }
+.CAP13__watch--navigation {
+    left: 0;
+    position: relative;
+    padding: 0 .5rem;
+    top: 16px;
+    z-index: 10;
+}
 
-                img {
-                    border: 1px solid #ccc;
-                    height: 85px;
-                    width: 150px;
-                }
+.CAP13__step {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+}
 
-                .list-thumbs__content {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 1.5rem;
-                    
-                    span {
-                        align-items: center;
-                        display: flex;
-                    }   
-                    
-                    .list-thumbs__content--inner {
-                        small {
-                            display: block;
-                        } 
+.CAP13__step--item {
+    background: #ccc;
+    border-radius: 2px;
+    flex-grow: 1;
+    height: 2px;
+    margin: 0 2px;
+    position: relative;
+}
 
-                        a {
-                            color: #CC0000;
-                            display: block;
-                            text-align: right;
-                            text-decoration: underline;
-                        }
-                    }
-                }
-            }
-        }
-    }
+.CAP13__step--item:after {
+    background: red;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all .3s;
+    width: 0;
+}
+
+.CAP13__storie__motivation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 0;
+
+}
+
+.CAP13__storie__motivation--item {
+    max-width: 50%;
+}
+
+
+.CAP13__thumbnail {
+    border-left: 1px solid #CCC;
+}
+
+.CAP13__thumbnail li {
+    align-items: center;
+    border-top: 1px solid #CCC;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.CAP13__thumbnail li:first-child {
+    border-top: none
+}
+
+.CAP13__thumbnail--image {
+    border: 1px solid #ccc;
+    height: 85px;
+    width: 150px;
+}
+
+.CAP13__thumbnail__content {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.CAP13__thumbnail__content span {
+    align-items: center;
+    display: flex;
+}
+
+.list-thumbs__content--inner small {
+    display: block;
+}
+
+.list-thumbs__content--inner .list-thumbs--button {
+    background: none;
+    border: none;
+    color: #CC0000;
+    cursor: pointer;
+    display: block;
+    text-align: right;
+    text-decoration: underline;
 }
