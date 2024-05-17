@@ -62,7 +62,7 @@ body {
     position: relative;
 }
 
-.CAP13__step--item:after {
+.CAP13__step--item div {
     background: red;
     content: '';
     height: 2px;

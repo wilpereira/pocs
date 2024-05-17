@@ -44,7 +44,7 @@ const CONTENT_DATA = [
 
 
 function loadVideo(urlVideo) {
-    const player = `<video autoplay><source src="${urlVideo}" type="video/mp4"></video>`
+    const player = `<video autoplay controlslist="nodownload noplaybackrate noremoteplayback nopictureInPicture" controls><source src="${urlVideo}" type="video/mp4"></video>`
     const videoContainer = document.querySelector(".CAP13__watch--player")
 
     videoContainer.innerHTML = player
@@ -105,8 +105,8 @@ function storieWinner(element) {
 function appendInfo() {
     const button = document.querySelectorAll('.list-thumbs--button')
 
-    button.forEach((e, index) => {
-        e.onclick = () => {
+    button.forEach((thumb, index) => {
+        thumb.onclick = () => {
             const DATA_INFO = {
                 name: CONTENT_DATA[index].name,
                 location: CONTENT_DATA[index].location,
@@ -119,7 +119,21 @@ function appendInfo() {
             elementDiv.innerHTML = storieWinner(DATA_INFO)
 
             loadVideo(DATA_INFO.video)
+            progressBarStorie()
         }
+    })
+}
+
+function progressBarStorie() {
+    const video = document.querySelector('video')
+
+    video.addEventListener('timeupdate', () => {
+        const currentTime = video.currentTime
+        const durationVideo = video.duration
+        const progress = (currentTime / durationVideo) * 100
+        const step = document.querySelector(".CAP13__step--item > div")
+
+        step.style.width = progress + '%'
     })
 }
 
@@ -134,6 +148,16 @@ function onloadVideo() {
     const firstVideo = CONTENT_DATA[0].urlVideo
 
     loadVideo(firstVideo)
+
+    const video = document.querySelector('video')
+    video.addEventListener('timeupdate', () => {
+        const currentTime = video.currentTime
+        const durationVideo = video.duration
+        const progress = (currentTime / durationVideo) * 100
+        const step = document.querySelector(".CAP13__step--item > div")
+
+        step.style.width = progress + '%'
+    })
 }
 
 function injectThumb() {
@@ -147,19 +171,10 @@ function createProgressBar() {
     const selector = document.querySelector('.CAP13__step')
 
     const elements = lengthItem.map(() => {
-        return `<div class="CAP13__step--item"></div>`
+        return `<div class="CAP13__step--item"><div></div></div>`
     }).join('')
 
     selector.innerHTML = elements
-}
-
-function durationVideo() {
-    const elementVideo = document.querySelector('video')
-    console.log(elementVideo)
-    
-    CONTENT_DATA.map((el) => {
-        console.log(el.urlVideo)
-    })
 }
 
 onloadVideo()
@@ -167,4 +182,3 @@ injectThumb()
 appendInfo()
 onLoadFirstWinner()
 createProgressBar()
-durationVideo()
